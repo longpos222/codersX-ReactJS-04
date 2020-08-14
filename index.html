@@ -5,22 +5,22 @@
     <meta charset="UTF-8">
   </head>
   <body>
-
     <div id="root"></div>
-    
     <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-    
-    <script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
       const todos = [
-      'Go to market.',
-      'Buy food.',
-      'Make dinner.'
+        'Go to market.',
+        'Buy food.',
+        'Make dinner.'
       ];
+
       const ThingsTodo = todos.map(function(thing){
-        return React.createElement('li', null, thing)
+        return <li>{thing}</li>;
       });
-      const App = React.createElement('ul', null, ThingsTodo);
+      const App = <ul>{ThingsTodo}</ul>;
       const root = document.getElementById('root');
       ReactDOM.render(App, root);
     </script>
